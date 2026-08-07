@@ -1,4 +1,4 @@
-from app.Retrieval.router import route_source
+from app.retrieval.router import route_source
 def retrieve_document(query:str)->str:
     """
     Retrieve relevant information for the given query.
