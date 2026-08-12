@@ -1,10 +1,14 @@
-from langchain_core.documents import Document
+from pathlib import Path
 
-class DocuumentLoader:
-    def load(self,source:str):
-        """
-        Load documents from the given source.
-        """
-        raise NotImplementedError(
-            "Document loading is not implemented yet."
+from langchain_community.document_loaders import PyPDFLoader
+
+def load_pdf(file_path:str):
+    path=Path(file_path)
+
+    if not path.exists():
+        raise FileNotFoundError(
+            f"PDF not found:{file_path}"
         )
+    loader=PyPDFLoader(str(path))
+    documents=loader.load()
+    return documents

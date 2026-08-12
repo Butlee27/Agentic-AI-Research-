@@ -1,0 +1,33 @@
+# LangGraph / LangChain
+langgraph
+langchain
+langchain-core
+langchain-groq
+
+# MCP
+mcp
+
+# LLM / Hugging Face
+transformers
+huggingface-hub
+torch
+
+# RAG / Document Processing
+pypdf
+chromadb
+sentence-transformers
+
+# Web Search
+tavily-python
+
+# API
+fastapi
+uvicorn[standard]
+pydantic
+
+# UI
+streamlit
+requests
+
+# Environment Variables
+python-dotenv

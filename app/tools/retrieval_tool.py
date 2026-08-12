@@ -1,5 +1,5 @@
 from langchain_core.tools import tool
-from app.retrieval.pipeline import retrieve_document
+from app.retrieval.pipeline import retrieve_documents
 
 @tool
 def retrieval_tool(query:str)-> str:
@@ -8,4 +8,4 @@ def retrieval_tool(query:str)-> str:
     Use this tool whenever external information is required before answering.
     """
 
-    return retrieve_document(query)
+    return retrieve_documents(query)

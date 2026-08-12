@@ -1,10 +1,10 @@
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-class DocumentChunker:
-    def __init__(self):
-        self.splitter=RecursiveCharacterTextSplitter(
-            chunk_size=1000,
-            chunk_overlap=200
-        )
 
-    def split(self,documents):
-        return self.splitter.split_documents(documents)
+def split_documents(documents):
+
+    splitter=RecursiveCharacterTextSplitter(
+        chunk_size=1000,
+        chunk_overlap=200
+        )
+    chunks=splitter.split_documents(documents)
+    return chunks    

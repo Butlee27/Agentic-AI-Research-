@@ -1,10 +1,19 @@
-from app.retrieval.router import route_source
-def retrieve_document(query:str)->str:
-    """
-    Retrieve relevant information for the given query.
+from app.retrieval.retriever import retrieve_documents as search_documents
 
-    This is the single entry point to the retrieval system.
-    The caller does not need to know where the data comes from.
-    
-    """ 
-    return route_source(query)
+
+def retrieve_documents(query: str) -> str:
+
+    documents = search_documents(query)
+
+    if not documents:
+        return "No relevant documents were found."
+
+    context_parts = []
+
+    for document in documents:
+
+        context_parts.append(
+            document.page_content
+        )
+
+    return "\n\n".join(context_parts)
