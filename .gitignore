@@ -1,8 +1,19 @@
 __pycache__/
 *.pyc
 .env
+.env.*
 .venv/
 venv/
 chroma_db/
 uploads/
 .vscode/
+
+# Local Chroma database
+data/chroma/
+
+# AWS deployment/task definition files
+api-task-definition.json
+ecs-secrets-policy.json
+ecs-tasks-trust-policy.json
+ui-task-definition-v3.json
+ui-task-definition.json
